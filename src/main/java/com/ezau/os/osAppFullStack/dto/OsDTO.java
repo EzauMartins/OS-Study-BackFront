@@ -1,5 +1,7 @@
 package com.ezau.os.osAppFullStack.dto;
 
+import com.ezau.os.osAppFullStack.enunm.Prioridade;
+import com.ezau.os.osAppFullStack.enunm.Status;
 import com.ezau.os.osAppFullStack.model.Cliente;
 import com.ezau.os.osAppFullStack.model.OS;
 import com.ezau.os.osAppFullStack.model.Tecnico;
@@ -65,16 +67,16 @@ public class OsDTO implements Serializable {
         this.dtFechamento = dtFechamento;
     }
 
-    public Integer getPrioridade() {
-        return prioridade;
+    public Prioridade getPrioridade() throws IllegalAccessException {
+        return Prioridade.toEnum(this.prioridade);
     }
 
     public void setPrioridade(Integer prioridade) {
         this.prioridade = prioridade;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Status getStatus() throws IllegalAccessException {
+        return Status.toEnum(this.status);
     }
 
     public void setStatus(Integer status) {

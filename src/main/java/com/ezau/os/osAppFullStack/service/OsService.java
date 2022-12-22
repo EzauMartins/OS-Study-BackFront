@@ -47,8 +47,8 @@ public class OsService {
     public OS fromDTO(OsDTO objDTO) throws IllegalAccessException {
         OS newObj = new OS();
         newObj.setId(objDTO.getId());
-        newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade()));
-        newObj.setStatus(Status.toEnum(objDTO.getStatus()));
+        newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade().getCod()));
+        newObj.setStatus(objDTO.getStatus());
 
         if (newObj.getStatus().getCod().equals(2)){
             newObj.setDtFechamento(LocalDateTime.now());
